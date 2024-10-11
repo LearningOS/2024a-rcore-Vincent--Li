@@ -30,6 +30,7 @@ global_asm!(include_str!("entry.asm"));
 /// clear BSS segment
 pub fn clear_bss() {
     extern "C" {
+        // linker.ld script define the sbss, ebss
         fn sbss();
         fn ebss();
     }
